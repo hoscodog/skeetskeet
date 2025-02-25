@@ -56,7 +56,7 @@ Below are the immediate action steps. As the project evolves, this README and th
 ## 📑 **Phase 3: Report Generation & Publishing**  
 
 ### 🔹 **Generate Reports**  
-- Reports will be generated as **PDFs or Markdown summaries**.  
+- Reports will be generated as **PDFs, HTML documents, or Markdown summaries**.  
 - Reports will include:  
   ✅ Performance trends  
   ✅ Station-specific insights  
