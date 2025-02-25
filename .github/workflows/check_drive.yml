@@ -7,7 +7,7 @@ on:
 
 jobs:
   check-drive:
-    runs-on: ubuntu-latest  # You can change this to macos-latest or windows-latest if needed
+    runs-on: ubuntu-latest 
 
     steps:
       - name: Checkout Repository
@@ -33,6 +33,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: processed-data
-          path: output/  # Ensure your script outputs data here
-
-
+          path: output/ 
