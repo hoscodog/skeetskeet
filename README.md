@@ -1,113 +1,90 @@
-# Skeet Skeet
-Automated Skeet shooting analysis of general performance metrics and report generation.
+# 🎯 Skeet Skeet  
+**Automated Skeet Shooting Analysis & Performance Metrics**  
 
-## What's the Plan?
-This project aims to allow users to upload skeet shooting scoring metrics and automatically provide performance insights, trend analysis, and actionable feedback through statistical analysis and report generation.
+---
 
-The goal is to use data-driven methods to analyze shooting performance over time, comparing different shooting techniques and providing insights into what works best.
+## 📌 What's the Plan?  
+This project aims to allow users to upload skeet shooting scoring metrics and automatically generate:  
+✅ Performance insights  
+✅ Statistical analysis  
+✅ Actionable feedback & improvement suggestions  
 
-## What Needs to Be Done?
-The project will be built in several phases, starting with basic data ingestion and moving towards full statistical analysis, reporting, and automated feedback.
+We are developing this project to gain **scientific backing** for our historical data while simultaneously tracking the effectiveness of different shooting techniques to determine what works best.  
 
-As the project evolves, this README and the corresponding Wiki pages should be updated to reflect the current project status.
+---
 
-## Phase 1: Data Collection and Storage
-### Recording Data
-#### Format:
-Data will be recorded in Excel (.xlsx) format.
+## 🛠️ What Needs to Be Done?  
+The initial goal is to process **time-series-based skeet shooting data**, where scores reflect actual skeet shooting results.  
 
-#### Storage Location:
-Google Drive (for easy access and versioning).
+Below are the immediate action steps. As the project evolves, this README and the corresponding Wiki pages should be updated accordingly.  
 
-#### Data Structure Considerations:
+---
 
-Date of session
+## 📊 **Phase 1: Data Collection & Storage**  
 
-Shooter name
+### 🔹 **Record Data**  
+- Data will be recorded and stored in **Excel (.xlsx) format**.  
+- This format is chosen for **easy editing & cloud storage** (Google Drive).  
 
-Round number
+### 🔹 **Fetch Data**  
+- A **GitHub Actions workflow** will automatically fetch the latest data from Google Drive on a **scheduled basis (TBD).**  
+- The raw `.xlsx` data will be processed in **Python** and stored in a **master dataset**.  
+- Possible storage solutions:  
+  - **PostgreSQL Database** (preferred)  
+  - **CSV/JSON** (interim solution before full database integration)  
+  - **Google Sheets API** (for real-time editing)  
 
-Station-by-station hit/miss results
+---
 
-Environmental factors (weather, wind, lighting conditions, etc.)
+## ⚙️ **Phase 2: Data Processing & Analysis**  
 
-Firearm & ammo type used (optional but useful for deeper insights)
+### 🔹 **Processing Workflow**  
+- The scheduled workflow will:  
+  ✅ Retrieve & normalize the latest data  
+  ✅ Append it to the master dataset  
+  ✅ Perform **data integrity checks** (missing entries, incorrect formats, etc.)  
 
+### 🔹 **Data Analysis**  
+- Key analytics to be performed:  
+  ✅ **Basic Stats**: Average score per round, station accuracy breakdown, trends over time  
+  ✅ **Performance Trends**: Identifying weaknesses & strengths at specific stations  
+  ✅ **Anomaly Detection**: Detect inconsistencies or potential scoring errors  
+  ✅ **Predictive Analytics (Future Expansion)**: Machine learning-based score predictions  
 
-### Fetching Data from Google Drive
-#### Automation
-A GitHub Actions workflow will fetch the latest data from Google Drive on a scheduled basis.
+---
 
-#### Transformation
-The raw .xlsx data will be cleaned and formatted using Python.
+## 📑 **Phase 3: Report Generation & Publishing**  
 
-#### Storage Options:
-PostgreSQL (preferred for structured storage and querying)
+### 🔹 **Generate Reports**  
+- Reports will be generated as **PDFs or Markdown summaries**.  
+- Reports will include:  
+  ✅ Performance trends  
+  ✅ Station-specific insights  
+  ✅ Suggested drills & improvement areas  
 
-CSV/JSON files (as an interim solution before full database integration)
+### 🔹 **Publish Data**  
+- Reports will be **accessible via:**  
+  ✅ **GitHub Actions Artifacts** (initial method)  
+  ✅ **Automated Email Reports** (future expansion)  
+  ✅ **Web Dashboard** (long-term goal)  
+  ✅ **Project Badges** (showing results for Ian & Grant)  
 
-Google Sheets API (if real-time collaborative editing is needed)
+---
 
+## 🚀 **Future Considerations & Expansions**  
+🔹 **Machine Learning Integration**: Predict score trends based on historical data  
+🔹 **Interactive Web Dashboard**: UI to visualize shooting performance over time  
+🔹 **IoT Sensor Data**: Integration with electronic shooting trainers  
+🔹 **Mobile App**: For real-time score logging & analysis  
 
-## Phase 2: Data Processing and Analysis
-#### Data Processing Workflow
-The scheduled workflow will:
+---
 
-Retrieve and normalize the latest data.
+## 📅 **Next Steps**  
+🔹 Finalize database schema for structured storage  
+🔹 Define key performance metrics for analysis  
+🔹 Build the first data pipeline (Google Drive → Database → Report)  
+🔹 Automate the first report generation & evaluate results  
 
-Append it to the master dataset in PostgreSQL (or another storage format).
+---
 
-Perform data integrity checks (detect missing entries, incorrect formats, etc.).
-
-#### Data Analysis
-The system will process the master dataset to compute:
-
-✅ Basic Statistics: Average score per round, station accuracy breakdown, trends over time.
-
-✅ Performance Trends: Identify strengths/weaknesses at specific stations or conditions.
-
-✅ Anomaly Detection: Identify inconsistencies or potential scoring errors.
-
-✅ Predictive Analytics (future expansion): Machine learning-based score prediction models.
-
-## Phase 3: Report Generation and Publishing
-#### Report Generation
-Reports will be generated as PDFs, HTML, or Markdown files.
-
-#### Report Contents
-Overall performance trends.
-
-Station-specific strengths and weaknesses.
-
-Suggested drills or improvements based on trends.
-
-#### Data Access and Publishing
-We will explore multiple ways to access the reports:
-
-✅ GitHub Actions Artifacts (initial method)
-
-✅ Project Badges (for tracking Ian and Grant’s results at a glance)
-
-✅ Email Reports (automated email notifications)
-
-✅ Web Dashboard (future expansion)
-
-## Potential Future Features
-🚀 Machine Learning Integration: Predict score trends based on historical data.
-
-📊 Interactive Web Dashboard: A UI to explore results dynamically.
-
-📡 IoT Sensor Data: Integration with electronic shooting trainers. (This is for you Ian)
-
-📱 Mobile App: For real-time score logging and analysis.
-
-## Next Steps
-Finalize the database schema for efficient storage and retrieval.
-
-Define the first set of analysis metrics (what insights are most valuable?).
-
-Implement the first version of the data pipeline (from Google Drive → Database → Report).
-
-Automate the first report generation and evaluate output.
-
-
+📢 **Stay tuned for updates as this project evolves!** 🎯  
