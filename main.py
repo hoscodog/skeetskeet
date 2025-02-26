@@ -9,4 +9,3 @@ Grant was here
 
 def main() -> None:
     """ To Be implemented """
-    ...
